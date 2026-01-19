@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konta - Añadir</title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <!-- Header Azul -->
+    <header class="header-add">
+        <div class="header-content" onclick="window.location.href='dashboard.html'">
+            <!-- Icono Atrás -->
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.5297 25.6042L13.1197 27L1 15L13.1197 3L14.5297 4.39583L4.81568 14.0124H29V15.9857H4.81568L14.5297 25.6042Z" fill="#FDFDFD"/>
+            </svg>
+            <h3>Añadir registro</h3>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal (Blanco) -->
+    <main class="add-container">
+        
+        <div class="form-wrapper">
+            
+            <!-- 1. Concepto -->
+            <div class="input-block">
+                <label>1. Concepto</label>
+                <input type="text" id="inp-concept" placeholder="Escribe aquí..." class="input-standard">
+            </div>
+
+            <!-- 2. Categoría (Toggle) -->
+            <div class="input-block">
+                <label>2. Categoría</label>
+                <div class="category-toggle">
+                    <!-- JS cambiará la clase 'active' -->
+                    <div class="cat-option active" id="btn-comida" onclick="setCategory('Comida')">Comida</div>
+                    <div class="cat-option" id="btn-otro" onclick="setCategory('Otros')">Otro</div>
+                </div>
+            </div>
+
+            <!-- 3. Descripción -->
+            <div class="input-block">
+                <label>3. Descripción (opcional)</label>
+                <textarea id="inp-desc" placeholder="Escribe aquí..." class="input-standard input-textarea"></textarea>
+            </div>
+
+            <!-- 4. Importe -->
+            <div class="input-block">
+                <label>4. Importe pagado</label>
+                <div class="amount-wrapper">
+                    <input type="number" id="inp-amount" placeholder="¿Cuanto has pagado?" class="input-standard input-euro">
+                    <span class="euro-symbol">€</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Botón Guardar -->
+        <button class="save-btn" onclick="saveTicket()">
+            <div class="btn-text">
+                <span>Guardar registro</span>
+                <!-- Puedes poner flecha aquí si quieres, el diseño original no la especificaba en el texto, pero el login sí -->
+            </div>
+        </button>
+
+    </main>
+
+    <script src="add.js"></script>
+</body>
+</html>
