@@ -12,10 +12,23 @@
 }
 
 body {
-    height: 100vh; /* Ocupa toda la altura */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: var(--Blanco-suave);
+    overflow: hidden;
+}
+
+/* Clases de utilidad */
+.hidden {
+    display: none !important;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
 /* --- Header Section --- */
@@ -31,40 +44,32 @@ body {
 }
 
 .header h1 {
-    /* H2 Style del diseño original, aplicado aquí */
     color: var(--Cyan-vivido);
     font-family: 'Lexend', sans-serif;
     font-size: 32px;
-    font-style: normal;
     font-weight: 600;
-    line-height: normal;
 }
 
 .header p {
-    /* Body Style */
     color: var(--Negro-suave);
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 18px;
-    font-style: normal;
     font-weight: 500;
-    line-height: normal;
 }
 
-/* --- Grid Section --- */
+/* --- Screen 1: User Grid --- */
 .user-grid {
     display: grid;
     padding: 24px;
     row-gap: 24px;
     column-gap: 24px;
-    flex: 1 0 0; /* Esto hace que ocupe el espacio restante */
+    flex: 1 0 0;
     align-self: stretch;
-    /* 4 filas iguales */
-    grid-template-rows: repeat(4, minmax(0, 1fr)); 
+    grid-template-rows: repeat(4, minmax(0, 1fr));
     grid-template-columns: 1fr;
     background: var(--Cyan-vivido);
 }
 
-/* --- User Cards --- */
 .user-card {
     display: flex;
     padding: 16px;
@@ -76,12 +81,12 @@ body {
     border: 1px solid var(--Negro-suave);
     background: var(--Blanco-suave);
     box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.90);
-    cursor: pointer; /* Para indicar que es clicable */
-    transition: transform 0.1s; /* Un toque extra suave */
+    cursor: pointer;
+    transition: transform 0.1s;
 }
 
 .user-card:active {
-    transform: scale(0.98); /* Efecto de pulsación */
+    transform: scale(0.98);
 }
 
 .user-card h2 {
@@ -91,7 +96,6 @@ body {
     font-weight: 700;
 }
 
-/* --- Footer dentro de la Card --- */
 .card-footer {
     display: flex;
     padding-bottom: 4px;
@@ -99,16 +103,87 @@ body {
     align-items: center;
     align-self: stretch;
     border-bottom: 1px solid var(--Negro-suave);
-    
-    /* Texto del footer */
     color: var(--Negro-suave);
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 18px; 
     font-weight: 500;
 }
 
-/* Ajuste del SVG */
-.card-footer svg {
-    display: block;
-    /* El tamaño lo define el atributo width/height del HTML o aquí */
+/* --- Screen 2: Login --- */
+.login-container {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    flex: 1 0 0; /* Ocupa el resto de pantalla */
+    align-self: stretch;
+    background: var(--Cyan-vivido);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+
+/* Estilos de los inputs */
+input {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    
+    border: 1px solid var(--Negro-suave);
+    background: var(--Blanco-suave);
+    box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.90);
+    
+    /* Texto interior */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--Negro-suave);
+    outline: none; /* Quita el borde azul del navegador */
+    border-radius: 0; /* Asegura bordes rectos en móviles */
+}
+
+input::placeholder {
+    color: rgba(26, 26, 26, 0.35);
+}
+
+/* Botón Iniciar Sesión */
+.login-btn {
+    display: flex;
+    padding: 16px;
+    justify-content: space-between; /* Texto izquierda, icono derecha */
+    align-items: center;
+    align-self: stretch;
+    
+    border: 1px solid var(--Negro-suave);
+    background: var(--Blanco-suave);
+    box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.90);
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+.login-btn span {
+    color: var(--Negro-suave);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    /* Para simular el border-bottom del texto dentro del botón */
+    border-bottom: 1px solid var(--Negro-suave);
+    padding-bottom: 4px;
+    width: 100%; /* Ocupa todo para empujar la flecha */
+    text-align: left;
+    margin-right: 16px; /* Espacio con la flecha */
 }
