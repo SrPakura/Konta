@@ -422,3 +422,180 @@ input::placeholder {
     border-bottom: 1px solid var(--Cyan-vivido); /* Subrayado azul */
     padding-bottom: 4px;
 }
+
+/* =========================================
+   AÑADIR REGISTRO STYLES
+   ========================================= */
+
+/* Header Específico */
+.header-add {
+    background: var(--Cyan-vivido);
+    border-bottom: 1px solid var(--Negro-suave);
+    padding: 24px 24px 16px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Centrado verticalmente el texto con el icono */
+    gap: 16px;
+    cursor: pointer;
+}
+
+.header-content h3 {
+    color: var(--Blanco-suave);
+    font-family: 'Lexend', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Contenedor Principal */
+.add-container {
+    background: var(--Blanco-suave);
+    flex: 1; /* Ocupa el resto de la altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    overflow-y: auto; /* Scroll si el teclado tapa algo */
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-self: stretch;
+}
+
+/* Bloques de Input */
+.input-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.input-block label {
+    color: var(--Cyan-vivido);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Inputs Estándar */
+.input-standard {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    align-self: stretch;
+    
+    /* Estilo visual */
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--Negro-suave); /* El subrayado */
+    border-radius: 0;
+    
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    color: var(--Negro-suave);
+    outline: none;
+}
+
+.input-standard::placeholder {
+    color: rgba(26, 26, 26, 0.35);
+}
+
+.input-textarea {
+    resize: none;
+    height: 100px; /* Un poco más alto */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Selector de Categoría (Toggle) */
+.category-toggle {
+    display: flex;
+    align-self: stretch;
+    height: 56px; /* Altura aprox del input */
+}
+
+.cat-option {
+    flex: 1; /* Mitad y mitad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--Negro-suave);
+}
+
+/* Estado Activo (Comida por defecto) */
+.cat-option.active {
+    background: var(--Cyan-vivido);
+    color: var(--Blanco-suave);
+    border: 1px solid var(--Cyan-vivido); /* Para tapar el borde negro si quieres, o dejarlo */
+}
+
+/* Estado Inactivo */
+.cat-option:not(.active) {
+    background: var(--Blanco-suave);
+    color: rgba(26, 26, 26, 0.35); /* Color grisáceo del diseño */
+}
+
+/* Input Importe con Euro */
+.amount-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.input-euro {
+    padding-right: 40px; /* Espacio para el símbolo € */
+}
+
+.euro-symbol {
+    position: absolute;
+    right: 16px;
+    color: var(--Cyan-vivido);
+    font-size: 24px;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+/* Botón Guardar */
+.save-btn {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    
+    border: 1px solid var(--Negro-suave);
+    background: var(--Cyan-vivido);
+    /* Nota: La sombra blanca sobre fondo blanco no se verá, pero la dejo por el diseño */
+    box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.90); 
+    
+    margin-top: 32px; /* Un poco de aire arriba */
+    cursor: pointer;
+}
+
+.save-btn:active {
+    transform: scale(0.98);
+}
+
+.btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    
+    color: var(--Blanco-suave);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
