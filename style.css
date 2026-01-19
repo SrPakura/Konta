@@ -17,6 +17,7 @@ body {
     flex-direction: column;
     background-color: var(--Blanco-suave);
     overflow: hidden;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* Clases de utilidad */
