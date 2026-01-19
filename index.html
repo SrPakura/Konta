@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konta - Selección de Usuario</title>
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Bienvenido a Konta</h1>
+        <p>¿Quién eres?</p>
+    </header>
+
+    <!-- Grid de Usuarios -->
+    <main class="user-grid">
+        <!-- Card: Ale -->
+        <div class="user-card" onclick="selectUser('Ale')">
+            <h2>Soy Ale</h2>
+            <div class="card-footer">
+                <span>Pulso aquí para iniciar sesión</span>
+                <!-- Icono Flecha (SVG Inline) -->
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/>
+                    <path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card: Eli -->
+        <div class="user-card" onclick="selectUser('Eli')">
+            <h2>Soy Eli</h2>
+            <div class="card-footer">
+                <span>Pulsa aquí para iniciar sesión</span>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/>
+                    <path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card: Ángel -->
+        <div class="user-card" onclick="selectUser('Ángel')">
+            <h2>Soy Ángel</h2>
+            <div class="card-footer">
+                <span>Pulsa aquí para iniciar sesión</span>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/>
+                    <path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Card: María -->
+        <div class="user-card" onclick="selectUser('María')">
+            <h2>Soy María</h2>
+            <div class="card-footer">
+                <span>Pulsa aquí para iniciar sesión</span>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/>
+                    <path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
