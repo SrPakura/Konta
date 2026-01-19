@@ -10,6 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
+
+    <!-- PWA Config -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0DB3F1">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Registro del Service Worker (Solo necesario ponerlo aquí, vale para toda la app) -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('SW registrado', reg))
+            .catch(err => console.log('SW error', err));
+        });
+      }
+    </script>
 </head>
 <body>
 
