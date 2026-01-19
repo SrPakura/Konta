@@ -16,7 +16,6 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--Blanco-suave);
-    overflow: hidden; /* Evita scroll si no es necesario */
 }
 
 /* --- Header Section --- */
