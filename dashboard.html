@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konta - Dashboard</title>
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+    <!-- Iconos Phosphor (Opcional, pero útil si te faltan SVGs, si no usamos los tuyos) -->
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- Conexión a Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <!-- SECCIÓN SUPERIOR (Blanca) -->
+    <section class="dashboard-top">
+        <header class="header-dashboard">
+            <!-- Se rellenará con JS -->
+            <h1 id="user-greeting">Hola, ...</h1>
+            <p>Aquí tienes tu resumen de la semana</p>
+        </header>
+
+        <div class="dashboard-summary">
+            <!-- Contador Principal -->
+            <div class="balance-card">
+                <div class="balance-content">
+                    <span id="remaining-amount">---,--</span>
+                    <span class="total-limit">/250</span>
+                </div>
+            </div>
+
+            <!-- Desglose Categorías -->
+            <div class="category-breakdown">
+                <div class="cat-item">
+                    <span class="cat-name">Comida:</span>
+                    <span class="cat-amount" id="cat-comida">0,00€</span>
+                </div>
+                <div class="cat-item">
+                    <span class="cat-name">Otros:</span>
+                    <span class="cat-amount" id="cat-otros">0,00€</span>
+                </div>
+            </div>
+
+            <!-- Botón ver otras semanas (Estilo texto+flecha) -->
+            <div class="history-link" onclick="alert('Próximamente: Calendario')">
+                <span>Ver gastos de otras semanas</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN INFERIOR (Azul - Lista de gastos) -->
+    <section class="expenses-scroll-area">
+        <div id="expenses-list">
+            <!-- AQUÍ SE INYECTARÁN LOS GASTOS DESDE JS -->
+            <!-- Ejemplo de cómo se verá (borrado por JS al cargar): -->
+            <!-- 
+            <div class="day-group">
+                <h2 class="day-title">Martes, 17 Enero</h2>
+                <div class="expense-card">...</div>
+            </div> 
+            -->
+            <p style="color: white; text-align: center; margin-top: 20px;">Cargando gastos...</p>
+        </div>
+        
+        <!-- Espacio extra al final para que el botón flotante no tape el último ticket -->
+        <div style="height: 100px;"></div>
+    </section>
+
+    <!-- BOTÓN FLOTANTE (Añadir Registro) -->
+    <div class="sticky-fab-container">
+        <button class="sticky-fab" onclick="window.location.href='add.html'"> <!-- Asumimos que la prox pantalla será add.html -->
+            <div class="fab-content">
+                <span>Añadir registro</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#0DB3F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+        </button>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
