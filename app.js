@@ -25,17 +25,41 @@ function selectUser(name) {
     loginPassInput.focus();
 }
 
-function tryLogin() {
+// ⚠️ PEGA AQUÍ LA URL DE TU WORKER
+const WORKER_URL = "https://konta-auth.srpakura.workers.dev/"; 
+
+async function tryLogin() {
     const password = loginPassInput.value;
     
-    if (password === "00000") {
-        // 1. Guardar en LocalStorage (Persistencia)
-        localStorage.setItem('konta_user', currentUser);
-        
-        // 2. Redirigir al Dashboard REAL
-        window.location.href = "dashboard.html"; 
-    } else {
-        alert("Contraseña incorrecta. Pista: es 00000");
+    // Feedback visual simple (opcional: deshabilitar botón mientras carga)
+    const btnText = document.querySelector('.login-btn span');
+    const originalText = btnText.innerText;
+    btnText.innerText = "VERIFICANDO...";
+
+    try {
+        const response = await fetch(WORKER_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pin: password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.valid) {
+            // LOGIN OK
+            localStorage.setItem('konta_user', currentUser);
+            // Redirigir
+            window.location.href = "dashboard.html"; 
+        } else {
+            // LOGIN FALLIDO
+            throw new Error("Pin incorrecto");
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("Contraseña incorrecta."); // Sin pistas ;)
         loginPassInput.value = "";
+        btnText.innerText = originalText; // Restaurar texto botón
+        loginPassInput.focus();
     }
 }
