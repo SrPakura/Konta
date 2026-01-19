@@ -106,6 +106,7 @@ function renderExpensesList(tickets) {
         dayTickets.forEach(t => {
             const card = document.createElement('div');
             card.className = 'expense-card';
+            card.onclick = () => { window.location.href = `detail.html?id=${t.id}`; };
             card.innerHTML = `
                 <div class="expense-row">
                     <span class="expense-concept">${t.concept}</span>
