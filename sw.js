@@ -1,4 +1,4 @@
-const CACHE_NAME = 'konta-v3';
+const CACHE_NAME = 'konta-v4';
 const ASSETS = [
   './',
   './index.html',
@@ -15,6 +15,16 @@ const ASSETS = [
   './icon-192.png',
   './icon-512.png'
 ];
+
+// Instalación: Guardamos archivos y FORZAMOS la espera
+self.addEventListener('install', (e) => {
+  // ESTA LÍNEA ES NUEVA: Obliga al SW a activarse ya, sin esperar a que cierres la app
+  self.skipWaiting(); 
+  
+  e.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
+  );
+});
 
 // Instalación: Guardamos los archivos en caché
 self.addEventListener('install', (e) => {
