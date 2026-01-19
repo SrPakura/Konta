@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konta - Detalle</title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <!-- Header Azul -->
+    <header class="header-detail">
+        <div class="header-content" onclick="window.location.href='dashboard.html'">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.5297 25.6042L13.1197 27L1 15L13.1197 3L14.5297 4.39583L4.81568 14.0124H29V15.9857H4.81568L14.5297 25.6042Z" fill="#FDFDFD"/>
+            </svg>
+            <h3>Registro completo</h3>
+        </div>
+    </header>
+
+    <main class="detail-container">
+        
+        <!-- Tarjeta Superior (Blanca con bordes) -->
+        <div class="detail-card-top">
+            <h2 id="det-concept">Cargando...</h2>
+            <div class="detail-row">
+                <span id="det-amount">--,--€</span>
+                <span id="det-user">Hecho por ...</span>
+            </div>
+        </div>
+
+        <!-- Lista de Detalles (Abajo) -->
+        <div class="detail-info-list">
+            
+            <!-- Bloque Categoría -->
+            <div class="info-item">
+                <h3>Categoría</h3>
+                <p id="det-category">...</p>
+            </div>
+
+            <!-- Bloque Fecha -->
+            <div class="info-item">
+                <h3>Fecha y hora</h3>
+                <p id="det-date">...</p>
+            </div>
+
+            <!-- Bloque Descripción -->
+            <div class="info-item">
+                <h3>Descripción:</h3>
+                <p id="det-desc">...</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="detail.js"></script>
+</body>
+</html>
