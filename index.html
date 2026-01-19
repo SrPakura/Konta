@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konta - Selección de Usuario</title>
+    <title>Konta</title>
     <!-- Fuentes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,63 +13,82 @@
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <h1>Bienvenido a Konta</h1>
-        <p>¿Quién eres?</p>
-    </header>
+    <!-- PANTALLA 1: SELECCIÓN DE USUARIO -->
+    <section id="screen-selection" class="screen">
+        <header class="header">
+            <h1>Bienvenido a Konta</h1>
+            <p>¿Quién eres?</p>
+        </header>
 
-    <!-- Grid de Usuarios -->
-    <main class="user-grid">
-        <!-- Card: Ale -->
-        <div class="user-card" onclick="selectUser('Ale')">
-            <h2>Soy Ale</h2>
-            <div class="card-footer">
-                <span>Pulso aquí para iniciar sesión</span>
-                <!-- Icono Flecha (SVG Inline) -->
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/>
-                    <path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+        <main class="user-grid">
+            <!-- Cards de usuarios -->
+            <div class="user-card" onclick="selectUser('Ale')">
+                <h2>Soy Ale</h2>
+                <div class="card-footer">
+                    <span>Pulso aquí para iniciar sesión</span>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/><path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
             </div>
-        </div>
 
-        <!-- Card: Eli -->
-        <div class="user-card" onclick="selectUser('Eli')">
-            <h2>Soy Eli</h2>
-            <div class="card-footer">
-                <span>Pulsa aquí para iniciar sesión</span>
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/>
-                    <path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            <div class="user-card" onclick="selectUser('Eli')">
+                <h2>Soy Eli</h2>
+                <div class="card-footer">
+                    <span>Pulsa aquí para iniciar sesión</span>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/><path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
             </div>
-        </div>
 
-        <!-- Card: Ángel -->
-        <div class="user-card" onclick="selectUser('Ángel')">
-            <h2>Soy Ángel</h2>
-            <div class="card-footer">
-                <span>Pulsa aquí para iniciar sesión</span>
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/>
-                    <path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            <div class="user-card" onclick="selectUser('Ángel')">
+                <h2>Soy Ángel</h2>
+                <div class="card-footer">
+                    <span>Pulsa aquí para iniciar sesión</span>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/><path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
             </div>
-        </div>
 
-        <!-- Card: María -->
-        <div class="user-card" onclick="selectUser('María')">
-            <h2>Soy María</h2>
-            <div class="card-footer">
-                <span>Pulsa aquí para iniciar sesión</span>
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/>
-                    <path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            <div class="user-card" onclick="selectUser('María')">
+                <h2>Soy María</h2>
+                <div class="card-footer">
+                    <span>Pulsa aquí para iniciar sesión</span>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="19" stroke="#1A1A1A" stroke-width="2"/><path d="M14 20H26M26 20L20 14M26 20L20 26" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </section>
+
+    <!-- PANTALLA 2: LOGIN (Oculta al principio) -->
+    <section id="screen-login" class="screen hidden">
+        <header class="header">
+            <!-- El nombre se actualizará con JS -->
+            <h1 id="greeting-title">¿Qué tal, Usuario?</h1>
+            <p>Vamos a iniciar sesión.</p>
+        </header>
+
+        <main class="login-container">
+            <!-- Inputs -->
+            <div class="input-group">
+                <input type="text" id="login-user" placeholder="Usuario..." readonly>
+                <input type="password" id="login-pass" placeholder="Contraseña...">
+            </div>
+
+            <!-- Botón Grande -->
+            <button class="login-btn" onclick="tryLogin()">
+                <span>INICIAR SESIÓN</span>
+                <!-- Tu SVG del botón -->
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_9_62)">
+                      <path d="M15 30C23.2853 30 30 23.2841 30 15C30 6.71585 23.2853 0 15 0C6.71585 0 0 6.71585 0 15C0 23.2841 6.71585 30 15 30ZM15 1.19995C22.6092 1.19995 28.8 7.39076 28.8 15C28.8 22.6092 22.6092 28.8 15 28.8C7.38961 28.8 1.19995 22.6092 1.19995 15C1.19995 7.39076 7.38961 1.19995 15 1.19995Z" fill="#1A1A1A"/>
+                      <path d="M15.9105 21.4482L16.7592 22.297L24.0551 15.0001L16.7592 7.70309L15.9105 8.55187L21.7581 14.3995H7.19965V15.5995H21.7581L15.9105 21.4482Z" fill="#1A1A1A"/>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_9_62">
+                        <rect width="30" height="30" fill="white"/>
+                      </clipPath>
+                    </defs>
+                </svg>
+            </button>
+        </main>
+    </section>
 
     <script src="app.js"></script>
 </body>
