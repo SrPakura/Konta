@@ -187,3 +187,237 @@ input::placeholder {
     text-align: left;
     margin-right: 16px; /* Espacio con la flecha */
 }
+
+/* =========================================
+   DASHBOARD STYLES
+   ========================================= */
+
+/* Layout general del Dashboard */
+/* La parte superior es blanca, la inferior azul */
+.dashboard-top {
+    background: var(--Blanco-suave);
+    border-bottom: 1px solid var(--Negro-suave);
+    display: flex;
+    flex-direction: column;
+}
+
+.header-dashboard {
+    /* Mismo header pero con menos padding inferior */
+    display: flex;
+    padding: 24px 24px 16px 24px; /* Ajuste según diseño */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.header-dashboard h1 {
+    color: var(--Cyan-vivido);
+    font-family: 'Lexend', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.dashboard-summary {
+    display: flex;
+    padding: 16px 24px;
+    flex-direction: column;
+    justify-content: flex-end; /* Alineado abajo según diseño */
+    align-items: flex-end;     /* Alineado derecha según diseño? */
+    /* Nota: En el diseño parece que los textos están a la izquierda, 
+       pero el contenedor dice align-items: flex-end. 
+       Lo pondré en 'stretch' para que ocupen todo el ancho y se vea bien */
+    align-items: stretch; 
+    gap: 36px;
+    align-self: stretch;
+    border-bottom: 1px solid var(--Negro-suave); /* Borde extra del dashboard */
+}
+
+/* --- Contador Circular --- */
+.balance-card {
+    display: flex;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 50px;
+    border: 2px solid var(--Cyan-vivido);
+}
+
+.balance-content {
+    display: flex;
+    width: 100%; /* Ocupa lo que pueda */
+    justify-content: center;
+    align-items: center;
+    gap: 4px; 
+}
+
+#remaining-amount {
+    color: var(--Cyan-vivido);
+    font-family: 'Lexend', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.total-limit {
+    color: rgba(26, 26, 26, 0.50);
+    font-family: 'Lexend', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* --- Categorías --- */
+.category-breakdown {
+    display: flex;
+    justify-content: space-between; /* Para separarlos */
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.cat-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cat-name {
+    color: var(--Cyan-vivido);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.cat-amount {
+    color: var(--Negro-suave);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Enlace historial */
+.history-link {
+    display: flex;
+    justify-content: flex-end; /* A la derecha */
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border-top: 1px dotted rgba(0,0,0,0.1); /* Separador sutil opcional */
+    padding-top: 8px;
+}
+.history-link span {
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+/* =========================================
+   LISTA DE GASTOS (SCROLL)
+   ========================================= */
+.expenses-scroll-area {
+    background: var(--Cyan-vivido);
+    flex: 1; /* Ocupa el resto de la pantalla */
+    overflow-y: auto; /* Permite scroll */
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.day-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.day-title {
+    color: #FFF;
+    font-family: 'Lexend', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.expense-card {
+    display: flex;
+    padding: 16px;
+    flex-direction: column; /* Diseño original dice column */
+    gap: 8px;
+    align-self: stretch;
+    border: 1px solid var(--Negro-suave);
+    background: var(--Blanco-suave);
+    box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.90);
+    transition: transform 0.1s;
+}
+
+.expense-card:active {
+    transform: scale(0.98);
+}
+
+.expense-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--Negro-suave);
+}
+
+.expense-concept {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--Negro-suave);
+}
+
+.expense-amount {
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--Negro-suave);
+}
+
+/* =========================================
+   BOTÓN FLOTANTE (STICKY)
+   ========================================= */
+.sticky-fab-container {
+    position: fixed;
+    bottom: 24px;
+    left: 0; 
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    z-index: 100;
+    pointer-events: none; /* Para que el contenedor no bloquee clicks a los lados */
+}
+
+.sticky-fab {
+    pointer-events: auto; /* El botón sí recibe clicks */
+    display: flex;
+    width: 268px;
+    height: 60px;
+    padding: 0 24px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px;
+    border: 2px solid var(--Negro-suave);
+    background: var(--Blanco-suave);
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2); /* Sombra extra para que flote bien */
+    cursor: pointer;
+}
+
+.fab-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+    color: var(--Cyan-vivido);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    
+    border-bottom: 1px solid var(--Cyan-vivido); /* Subrayado azul */
+    padding-bottom: 4px;
+}
