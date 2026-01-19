@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konta - Calendario</title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- No necesitamos Supabase aquí, solo lógica de fechas -->
+</head>
+<body>
+
+    <!-- Header Azul -->
+    <header class="header-calendar">
+        <div class="header-content" onclick="window.location.href='dashboard.html'">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.5297 25.6042L13.1197 27L1 15L13.1197 3L14.5297 4.39583L4.81568 14.0124H29V15.9857H4.81568L14.5297 25.6042Z" fill="#FDFDFD"/>
+            </svg>
+            <h3>Otras semanas</h3>
+        </div>
+    </header>
+
+    <main class="calendar-container">
+        
+        <!-- Selector de Mes -->
+        <div class="month-selector">
+            <button onclick="changeMonth(-1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="#0DB3F1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <h2 id="month-year-label">Enero 2025</h2>
+            <button onclick="changeMonth(1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 18L15 12L9 6" stroke="#0DB3F1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+
+        <!-- Cabecera Días (LU MA MI...) -->
+        <div class="weekdays-header">
+            <span>LU</span><span>MA</span><span>MI</span><span>JU</span><span>VI</span><span>SA</span><span>DO</span>
+        </div>
+
+        <!-- Grid del Calendario (Se rellena con JS) -->
+        <div id="calendar-grid" class="calendar-grid">
+            <!-- Aquí JS inyectará las filas de las semanas -->
+        </div>
+
+    </main>
+
+    <script src="calendar.js"></script>
+</body>
+</html>
